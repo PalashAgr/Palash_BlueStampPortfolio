@@ -1,11 +1,7 @@
 # Ball Tracking Rover
 The project involves building a Raspberry PI-based robot that tracks a ball as a simulation of sample and hazard detection. It uses the OpenCV python library for computer vision, which is used to draw bounding boxes around where the ball could possibly be. In addition, the rover performs topography analysis on factors such as tilt and orientation to determine its location, while also tracking planets.
-
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
-```
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
