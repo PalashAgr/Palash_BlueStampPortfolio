@@ -47,9 +47,9 @@ For your first milestone, describe what your project is and how you plan to buil
 - An explanation about the different components of your project and how they will all integrate together
 - Technical progress you've made so far
 - Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
-
-# Schematics 
+- What your plan is to complete your project -->
+My project is a ball tracking rover that uses raspberry PI to perform topography analysis, planet tracking, and also create a graph charting the ball's distance from the robot. After creating diagrams on paper and a schematic online, for my first milestone I have completed the base of th robot, which included attaching the motors, the battery case, and wheels. After this, I will need to wire the electronics together on the robot using the schematic, before writing the full code for the robot.
+<!---# Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
 
 ![schematic](schematic.jpg)
