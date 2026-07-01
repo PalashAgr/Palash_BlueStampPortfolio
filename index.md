@@ -48,6 +48,9 @@ For your first milestone, describe what your project is and how you plan to buil
 # First Milestone
 My project is a ball tracking rover that uses raspberry PI to perform topography analysis, planet tracking, and also create a graph charting the ball's distance from the robot. After creating diagrams on paper and a schematic online, for my first milestone I have completed the base of th robot, which included attaching the motors, the battery case, and wheels. After this, I will need to wire the electronics together on the robot using the schematic, before writing the full code for the robot.
 <!--Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
+
+# Starter Project
+For my starter project I chose the retro arcade console. The console has 5 games in its system (which I didn't correctly figure out until after filming the milestone video). Much of the project encompassed soldering buttons and other game components onto a PCB. After screwing on the battery case on the back, I screwed on the front and back lids of the console. Overall, this starter project helped me solidify my soldering skills.
 # Schematics
 ![schematic](schematic.jpg)
 
