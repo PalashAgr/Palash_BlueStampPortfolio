@@ -46,13 +46,17 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project -->
 # First Milestone
-My project is a ball tracking rover that uses raspberry PI to perform topography analysis, planet tracking, and also create a graph charting the ball's distance from the robot. After creating diagrams on paper and a schematic online, for my first milestone I have completed the base of th robot, which included attaching the motors, the battery case, and wheels. After this, I will need to wire the electronics together on the robot using the schematic, before writing the full code for the robot.
+  # Summary
+  My project is a ball tracking rover that uses raspberry PI to perform topography analysis, planet tracking, and also create a graph       charting the ball's distance from the robot. After creating diagrams on paper and a schematic online, for my first milestone I have completed the base of th robot, which included attaching the motors, the battery case, and wheels. 
+  # Challenges
+  While assembling the hardware, sometimes it was hard to tell which size screws were needed to mount a component. Initially, my screws to secure the battery case were too small and kept falling out, however I eventually pivoted to a larger size which worked better in securing it. Additionally, when making the schematic online on fritzing, the hardest part was making the voltage divider on the breadboard. Before making the schematic, I did not have a ton of electrical experience, but eventually I was able to learn how they work. In the schematic below, you can see that there are 3 voltage dividers, 1 for each sensor, and the resistors are in parallel.
+  ![schematic](schematic.jpg)
+  # Next Steps
+  Now that the base of the robot is assembled and planning has been done, I will need to wire the electronics together on the robot using the schematic. Once all these electronics are funcitoning correctly and are mounted onto the robot, I can start writing the full code for the robot.
 <!--Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
 
 # Starter Project
 For my starter project I chose the retro arcade console. The console has 5 games in its system (which I didn't correctly figure out until after filming the milestone video). Much of the project encompassed soldering buttons and other game components onto a PCB. After screwing on the battery case on the back, I screwed on the front and back lids of the console. Overall, this starter project helped me solidify my soldering skills.
-# Schematics
-![schematic](schematic.jpg)
 
 <!---# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
