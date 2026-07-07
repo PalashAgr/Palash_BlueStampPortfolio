@@ -7,7 +7,7 @@ The project involves building a Raspberry PI-based robot that tracks a ball as a
 |:--:|:--:|:--:|:--:|
 | Palash A | Cupertino HS | Aerospace Engineering | Incoming Junior
 
-![Headshot](headshot.heic)
+![Headshot](headshot.jpg)
   
 <!--**# Final Milestone
 
