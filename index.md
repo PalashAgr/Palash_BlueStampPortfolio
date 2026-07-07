@@ -87,7 +87,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Video Capture Card | What the item is used for | $15.99 | <a href="https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7?th=1"> Link </a> |
 | SD Card Reader | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Basic Connections Components Kit | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Female to Female Jumper Wires| One of the types of wires used to connect the components | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Female to Female Jumper Wires| One of the types of wires used to connect the components | $1.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/1950/6827084?gclsrc=aw.ds&gad_source=1&gad_campaignid=20232005509&gbraid=0AAAAADrbLljptrgFyBRhANVYO4nOwL4mw&gclid=CjwKCAjwx7LSBhB3EiwAjcodxMaqXD3yC4neFOcPBvp2WLxwl1qzc0lilNy_xKyJw9D0pvGeaAex9BoC6K0QAvD_BwE&__cf_chl_f_tk=Uia7vvSdgHEdaC.xTbj.fXW9Tw4Fg0STdL_glbliS3g-1783438661-1.0.1.1-jvd.UjjxgvLWgold6_GjzJ8gw_qMrPcZQiDYgfDZ4KU"> Link </a> |
 | Soldering Kit | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 <!--# Other Resources/Examples
