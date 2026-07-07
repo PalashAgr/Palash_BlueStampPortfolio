@@ -54,7 +54,10 @@ For your first milestone, describe what your project is and how you plan to buil
 <!--Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
 
 # Starter Project
-For my starter project I chose the retro arcade console. The console has 5 games in its system (which I didn't correctly figure out until after filming the milestone video). Much of the project encompassed soldering buttons and other game components onto a PCB. After screwing on the battery case on the back, I screwed on the front and back lids of the console. Overall, this starter project helped me solidify my soldering skills.
+## Summary
+  For my starter project I chose the retro arcade console. The console has 5 games in its system (which I didn't correctly figure out until after filming the milestone video). Much of the project encompassed soldering buttons and other game components onto a PCB. After screwing on the battery case on the back, I screwed on the front and back lids of the console. Overall, this starter project helped me solidify my soldering skills.
+## Challenges
+  A lot of times when I was soldering I accidentally added too much solder, which was especially tedious to avoid for smaller solder points that were closer together. If two solder points are connected by solder, it will cause a short circuit. Fortunately, I learned a couple of techniques to fix these errors. A lot of times, applying the soldering iron on the solder will remelt it and make it flow into the hole. I also ended up using the solder sucker a lot to remove excess solder from the board.
 
 <!---# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
