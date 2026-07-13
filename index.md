@@ -25,7 +25,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 ## Summary
-  For my 2nd milestone, I wired the raspberry pi, motor driver h-bridge, and ultrasonic sensors to the base of the rover. Using the schematic I made on fritzing, I started by connecting the switches on the motor driver to the motors on the sides of the robot.
+  For my 2nd milestone, I wired the raspberry pi, motor driver h-bridge, and ultrasonic sensors to the base of the rover. Using the schematic I made on fritzing, I started by connecting the switches on the motor driver to the motors on the sides of the robot, as well as the battery wires. Each of the sensors had 4 wires: Ground, power, echo, and trig. The ground, power, and echo wires connected to the breadboard, while the trig wires connected to the raspberry pi.
 ## Challenges
 ## Next Steps
 
