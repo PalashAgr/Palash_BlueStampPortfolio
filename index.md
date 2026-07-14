@@ -27,7 +27,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 ## Summary
   For my 2nd milestone, I wired the raspberry pi, motor driver h-bridge, and ultrasonic sensors to the base of the rover. Using the schematic I made on fritzing, I started by connecting the switches on the motor driver to the motors on the sides of the robot, as well as the battery wires. Each of the sensors had 4 wires: Ground, power, echo, and trig. The ground, power, and echo wires connected to the breadboard, while the trig wires connected to the raspberry pi. For each of these sensors, I also installed a voltage divider on the breadboard. After this, I tested the motors, camera module, and ultrasonic sensors using testing code to test functionality.
 ## Challenges
-  One of the challenges I had when physically doing the wiring was creating the voltage dividers.
+  One of the challenges I had when physically doing the wiring was creating the voltage dividers. I had to conduct some research and learn a bit more about how voltage dividers work.
 ## Next Steps
 
 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
