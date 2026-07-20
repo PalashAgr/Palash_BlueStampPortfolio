@@ -29,7 +29,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 ## Challenges
   One of the challenges I had when physically doing the wiring was creating the voltage dividers. I had to conduct some research and learn a bit more about how voltage dividers work, and I went through many stages of wiring before achieving the correct setup. Later on, another challenge I encountered was setting up SSH. Sometimes, the monitor took a long time to turn on, and there was a very long process Raspberry Pi imager had to undergo to install SSH. However, now it is easier to log into the monitor quickly and write code. Specific to the testing code, sometimes there were issues with python syntax and unimported libraries, but now I was able to verify that the picamera worked, the ultrasonic sensors had accurate measurements, and I can also control robot movement using WASD, just like in a video game.
 ## Next Steps
-
+  The hardware is now completely setup and mounted, so now I plan to start writing full code for the robot. I will be using the Thonny python editor on the raspberry pi software, which I also used for the testing code. Currently, my logic is to use the openCV library to create a mask to track where the ball is continuously in each frame, and have the robot turn or move forward accordingly.
 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
@@ -88,7 +88,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | L298N Driver Board | Provides power to the motors, in different combinations that affect the movement of the robot, which is determined by the code uploaded into the raspberry pi | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Motors and Board Kit | Contains all the parts needed to assemble the base of the robot | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Power bank | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| HC-SR04 Sensors (5 pcs) | What the item is used for | $5.25 | <a href="https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html?srsltid=AfmBOoqFrVAtpwHDCejRn62wEtzgnn7pZzJ7Wjbl_NNX58lybzk9adbq"> Link </a> |
+| HC-SR04 Sensors (5 pcs) | Sends and receives a signal and measures the time in between the pulses. This time can be used to calculate the distance to the nearest obstacle. | $5.25 | <a href="https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html?srsltid=AfmBOoqFrVAtpwHDCejRn62wEtzgnn7pZzJ7Wjbl_NNX58lybzk9adbq"> Link </a> |
 | HDMI to micro HDMI cable | Allows the raspberry pi to connect to a monitor with keyboard and mouse, or just a laptop after SSH has been setup | $6.99 | <a href="https://www.amazon.com/UGREEN-Adapter-Ethernet-Compatible-Raspberry/dp/B06WWQ7KLV?th=1"> Link </a> |
 | Video Capture Card | What the item is used for | $15.99 | <a href="https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7?th=1"> Link </a> |
 | SD Card Reader | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
