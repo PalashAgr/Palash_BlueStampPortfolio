@@ -30,6 +30,8 @@ For your final milestone, explain the outcome of your project. Key details to in
   One of the challenges I had when physically doing the wiring was creating the voltage dividers. I had to conduct some research and learn a bit more about how voltage dividers work, and I went through many stages of wiring before achieving the correct setup. Later on, another challenge I encountered was setting up SSH. Sometimes, the monitor took a long time to turn on, and there was a very long process Raspberry Pi imager had to undergo to install SSH. However, now it is easier to log into the monitor quickly and write code. Specific to the testing code, sometimes there were issues with python syntax and unimported libraries, but now I was able to verify that the picamera worked, the ultrasonic sensors had accurate measurements, and I can also control robot movement using WASD, just like in a video game.
 ## Next Steps
   The hardware is now completely setup and mounted, so now I plan to start writing full code for the robot. I will be using the Thonny python editor on the raspberry pi software, which I also used for the testing code. Currently, my logic is to use the openCV library to create a mask to track where the ball is continuously in each frame, and have the robot turn or move forward accordingly.
+
+
 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
