@@ -92,14 +92,11 @@ Don't forget to place the link of where to buy each component inside the quotati
 | HDMI to micro HDMI cable | Allows the raspberry pi to connect to a monitor with keyboard and mouse, or just a laptop after SSH has been setup | $6.99 | <a href="https://www.amazon.com/UGREEN-Adapter-Ethernet-Compatible-Raspberry/dp/B06WWQ7KLV?th=1"> Link </a> |
 | Video Capture Card | What the item is used for | $15.99 | <a href="https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7?th=1"> Link </a> |
 | SD Card Reader | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Basic Connections Components Kit | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Basic Connections Components Kit | Contains jumper wires which are primarily used to create the voltage dividers on the breadboard | $10.60 | <a href="https://www.digikey.com/en/products/detail/bud-industries/BC-32626/5291560?gclsrc=aw.ds&gad_source=1&gad_campaignid=20232005509&gbraid=0AAAAADrbLlhYGjx1hri3mwVbTplsA0TMC&gclid=CjwKCAjwsfzSBhB5EiwAOGyqSaWfFZ-PQZIniYwwyta05ZzSblONG60Tda5WEF7z-3xyNA6KWB3CqxoCTZwQAvD_BwE"> Link </a> |
 | Female to Female Jumper Wires| One of the types of wires used to connect the components | $1.95 | <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/1950/6827084?gclsrc=aw.ds&gad_source=1&gad_campaignid=20232005509&gbraid=0AAAAADrbLljptrgFyBRhANVYO4nOwL4mw&gclid=CjwKCAjwx7LSBhB3EiwAjcodxMaqXD3yC4neFOcPBvp2WLxwl1qzc0lilNy_xKyJw9D0pvGeaAex9BoC6K0QAvD_BwE&__cf_chl_f_tk=Uia7vvSdgHEdaC.xTbj.fXW9Tw4Fg0STdL_glbliS3g-1783438661-1.0.1.1-jvd.UjjxgvLWgold6_GjzJ8gw_qMrPcZQiDYgfDZ4KU"> Link </a> |
-| Soldering Kit | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Soldering Kit | Used to solder lose wire ends and permanantely attach breadboard wiring to perf board (breadboard is only temporary) | $51.99 | <a href="https://www.amazon.com/gp/aw/d/B09TXP1KDV/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=84d81372b709bb6a1b2aa42a5f3e1a9a&hsa_cr_id=0&qid=1784648426&sr=1-1-9e67e56a-6f64-441f-a281-df67fc737124&i=aps&aref=sKRejGvEwE&ref_=sbx__sbtcd_asin_0_title&pd_rd_w=gVsLw&content-id=amzn1.sym.2fb72bc8-96ef-420d-b08f-c04b69f36507%3Aamzn1.sym.2fb72bc8-96ef-420d-b08f-c04b69f36507&pf_rd_p=2fb72bc8-96ef-420d-b08f-c04b69f36507&pf_rd_r=BAN7CRC0FSH8P87DS95Q&pd_rd_wg=LP2R5&pd_rd_r=65142355-ccda-48fe-83fe-0a0c353bb247"> Link </a> |
 
-<!--# Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
-
-To watch the BSE tutorial on how to create a portfolio, click here.-->
+# Other Resources/Examples
+<!--One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.-->
+- [gpiozero library documentation](https://gpiozero.readthedocs.io/en/stable/api_input.html)
+- [Geeksforgeeks](https://www.geeksforgeeks.org/python/circle-detection-using-opencv-python/)
