@@ -54,6 +54,8 @@ For your first milestone, describe what your project is and how you plan to buil
 ## Challenges
   While assembling the hardware, sometimes it was hard to tell which size screws were needed to mount a component. Initially, my screws to secure the battery case were too small and kept falling out, however I eventually pivoted to a larger size which worked better in securing it. Additionally, when making the schematic online on fritzing, the hardest part was making the voltage divider on the breadboard. Before making the schematic, I did not have a ton of electrical experience, but eventually I was able to learn how they work. In the schematic below, you can see that there are 3 voltage dividers, 1 for each sensor, and the resistors are in parallel.
   ![schematic](schematic.jpg)
+  note: Left sensor trig wire has been moved to pin 15 (GPIO 22), left sensor echo wire connected to breadboard moved to pin 13 (GPIO 27).
+  
 ## Next Steps
   Now that the base of the robot is assembled and planning has been done, I will need to wire the electronics together on the robot using the schematic. Once all these electronics are funcitoning correctly and are mounted onto the robot, I can start writing the full code for the robot.
 <!--Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
