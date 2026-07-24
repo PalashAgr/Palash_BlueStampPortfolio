@@ -21,7 +21,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE-->
 
-# Second Milestone
+# Third Milestone
 ## Summary
   For my 3rd milestone, I wrote the full code for the robot to track the ball, move, and avoid obstacles. I wrote all my code in the Thonny python editor, which was built in to the raspberry pi computer. To track the ball, I defined 2 color ranges to create a binary mask, where pixels whose color is in the range(s) are shown as a white pixel in the mask, while the rest of the pixels are shown as black. The program draws an ellipse around the largest contour, or outline of a shape, and assumes that is the ball. From the ellipse, it extracts we can extract the x and y coordinates of the ball's center.
 ## Challenges
