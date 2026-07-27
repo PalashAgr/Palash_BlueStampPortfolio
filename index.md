@@ -23,9 +23,10 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Third Milestone
 ## Summary
-  For my 3rd milestone, I wrote the full code for the robot to track the ball, move, and avoid obstacles. I wrote all my code in the Thonny python editor, which was built in to the raspberry pi computer. To track the ball, I defined 2 color ranges to create a binary mask, where pixels whose color is in the range(s) are shown as a white pixel in the mask, while the rest of the pixels are shown as black. The program draws an ellipse around the largest contour, or outline of a shape, and assumes that is the ball. From the ellipse, it extracts we can extract the x and y coordinates of the ball's center.
-## Challenges
+  For my 3rd milestone, I wrote the full code for the robot to track the ball, move, and avoid obstacles. I wrote all my code in the Thonny python editor, which was built in to the raspberry pi computer. To track the ball, I defined 2 color ranges to create a binary mask, where pixels whose color is in the range(s) are shown as a white pixel in the mask, while the rest of the pixels are shown as black. The program draws an ellipse around the largest contour, or outline of a shape, and assumes that is the ball. From the ellipse, it extracts we can extract the x and y coordinates of the ball's center. After this, the ultrasonic sensors send out pulses to get the nearest obstacle distance, and depending on how small those distances are, the rover will either back up, turn right, or change the outputs of the motor pins to move forward, backward, left, or right, towards the ball. If the ball is not in frame, the rover will keep rotating counterclockwise until it finds the ball.
   
+## Challenges
+  One of the challenges with the camera was changing when the frames are converted from RGB to BGR or HSV, which are two other types of color ranges. I had to experiment with the placements of these conversions to make sure that the camera was seeing accurately, specifically it should not see red objects as blue and vice versa. Additionally, I had to spend a lot of time tweaking the color ranges for the mask so that it does not pick up other objects in similar color.
 ## Next Steps
 
 
