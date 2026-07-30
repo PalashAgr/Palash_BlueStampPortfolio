@@ -112,3 +112,6 @@ Don't forget to place the link of where to buy each component inside the quotati
 <!--One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.-->
 - [gpiozero library documentation](https://gpiozero.readthedocs.io/en/stable/api_input.html)
 - [Geeksforgeeks](https://www.geeksforgeeks.org/python/circle-detection-using-opencv-python/)
+- [makersportal](https://makersportal.com/blog/calibration-of-an-inertial-measurement-unit-with-raspberry-pi?srsltid=AfmBOooq1QSGR5yEc7tFMCLZ8EB6_s41uGYW7iHP91mnt7EcI4H8SxMY)
+- [Blog on implementing an IMU](https://sharad-rawat.medium.com/interface-an-inertial-measurement-unit-imu-with-raspberry-pi-3d7b9583db09)
+- [Geeksforgeeks matplot article](https://www.geeksforgeeks.org/python/plot-multiple-plots-in-matplotlib/)
