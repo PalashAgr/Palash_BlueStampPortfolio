@@ -1,5 +1,5 @@
 # Ball Tracking Rover
-The project involves building a Raspberry PI-based robot that tracks a ball as a simulation of sample and hazard detection. It uses the OpenCV python library for computer vision, which is used to draw bounding boxes around where the ball could possibly be. In addition, the rover performs topography analysis on factors such as tilt and orientation to determine its location, while also tracking planets.
+The project involves building a Raspberry PI-based rover that tracks a ball as a simulation of sample and hazard detection. It uses the OpenCV python library for computer vision, which is used to draw bounding boxes around where the ball could possibly be. In addition, the rover performs topography analysis on factors such as tilt and temperature and graphs data for pitch, roll, and temperature.
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
 
@@ -9,17 +9,16 @@ The project involves building a Raspberry PI-based robot that tracks a ball as a
 
 ![Headshot](headshot.jpg)
   
-<!--**# Final Milestone
+# Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+## Summary
+  For my final milestone, I implemented both of my modifications. The first one was to perform topography analysis, using data from an IMU. The IMU measures angular acceleration in the x, y, and z directions. I used these values to calculate pitch, roll, and temperature, the latter of which is also directly measured by the IMU. Then, I used python's Matplot lib library to graph the 3 quantities. To make this process simpler, I put all my IMU code in a separate file before integrating it into the main.py file. My other modification involved modeling a cover for the rover using CAD. I ended up making it 9 parts total, and when the parts arrived I had to remove a bunch of supports and paint all the components before attaching it to the rover to achieve the final product.
 
-<iframe width="560" height="315" src="https://www.yout ube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Challenges
+  Before I could start wiring my IMU, my picamera module broke off, possibly by dropping the rover by accident, so I had to place it back while also correcting the cover in OnShape so that the hole for the camera mount is aligned with the camera itself. Later, when I was testing my IMU code, my sensor library was unable to be used, and I thought I had to setup a virtual environment, which I also thought broke my main code somehow. However, it turns out the process of reattaching the camera mount was the source of the error, and I ended up spending an entire session replacing cameras and ribbon cables numerous times, until it magically worked the next session. Going back to the library issue, I tried deactivating the virtual environment and using a different terminal command to install the library, and somehow it worked. In summary, these were two completely different issues that I thought were related in some way, and while this confusion took a lot of time to resolve, it was by far the most effective at teaching me the importance of persevearance at Bluestamp.
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE-->
+## Next Steps
+  Now that my project at Bluestamp is finished, I can say that I have learned a lot of skills in electrical and software engineering. This program was most effective at teaching me how to use a variety of electrical components like a raspberry pi, motor driver, an IMU, and some ultrasonic sensors. As for software, I learned how to be resourceful and use the internet to find articles, blogs, and other resources to help me with implementing code for my project. I also got a lot more comfortable using terminal. Overall, the skills that I have learned at Bluestamp will help me do a lot more in my extracurricular activities at school. In the future, I hope to continue to practice my software skills for these types of projects and also learn how to design printed circuit boards (or PCBs).
 
 # Third Milestone
 ## Summary
