@@ -76,23 +76,572 @@ For your first milestone, describe what your project is and how you plan to buil
 # Code
 ## Camera Testing Code
 ```python
+import cv2
+from picamera2 import Picamera2
+import RPi.GPIO as GPIO
+import time              
+import numpy as np
 
+picam2 = Picamera2()
+picam2.configure(picam2.create_preview_configuration())
+picam2.start()
+
+while True:
+    frame = picam2.capture_array()
+
+    cv2.imshow("Camera", frame)
+
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+picam2.stop()
+cv2.destroyAllWindows()
 ```
 ## Motor Testing Code
 ```python
+import RPi.GPIO as GPIO
+import cv2
+import numpy as np
+        
+GPIO.setmode(GPIO.BCM)
+        
+MOTORAB=9 # RIGHT motor
+MOTORAA=25
+        
+MOTORBA=15 # LEFT motor
+MOTORBB=23 
+        
+GPIO.setup(MOTORAA, GPIO.OUT)
+GPIO.setup(MOTORAB, GPIO.OUT)
+        
+GPIO.setup(MOTORBA, GPIO.OUT)
+GPIO.setup(MOTORBB, GPIO.OUT)
 
+motor_pwm1 = GPIO.PWM(MOTORAA, 1000)
+motor_pwm1.start(0)  # Initial duty cycle is 0 (stopped)
+speed = 60
+motor_pwm2 = GPIO.PWM(MOTORAB, 1000)
+motor_pwm2.start(0)  # Initial duty cycle is 0 (stopped)
+motor_pwm3 = GPIO.PWM(MOTORBA, 1000)
+motor_pwm3.start(0)  # Initial duty cycle is 0 (stopped)
+motor_pwm4 = GPIO.PWM(MOTORBB, 1000)
+motor_pwm4.start(0)  # Initial duty cycle is 0 (stopped)
+
+while(True):
+    userInput = input()  
+    if(userInput == 'd'):
+        GPIO.output(MOTORAA,GPIO.HIGH)
+        motor_pwm1.ChangeDutyCycle(speed)
+        GPIO.output(MOTORAB,GPIO.LOW)
+        motor_pwm2.ChangeDutyCycle(0)
+        GPIO.output(MOTORBA,GPIO.HIGH)
+        motor_pwm3.ChangeDutyCycle(speed)
+        GPIO.output(MOTORBB,GPIO.LOW)
+        motor_pwm4.ChangeDutyCycle(0)
+        print("d pressed")
+            
+    if(userInput == 's'):
+        print("s pressed")
+        GPIO.output(MOTORAA,GPIO.LOW)
+        motor_pwm1.ChangeDutyCycle(0)
+        GPIO.output(MOTORAB,GPIO.HIGH)
+        motor_pwm2.ChangeDutyCycle(speed)
+        GPIO.output(MOTORBA,GPIO.HIGH)
+        motor_pwm3.ChangeDutyCycle(speed)
+        GPIO.output(MOTORBB,GPIO.LOW)
+        motor_pwm4.ChangeDutyCycle(0)
+                
+    if(userInput == 'a'):
+        print("a pressed")
+        GPIO.output(MOTORAA,GPIO.LOW)
+        motor_pwm1.ChangeDutyCycle(0)
+        GPIO.output(MOTORAB,GPIO.HIGH)
+        motor_pwm2.ChangeDutyCycle(speed)
+        GPIO.output(MOTORBA,GPIO.LOW)
+        motor_pwm3.ChangeDutyCycle(0)
+        GPIO.output(MOTORBB,GPIO.HIGH)
+        motor_pwm4.ChangeDutyCycle(speed)
+            
+    if(userInput == 'w'):
+        print("w pressed")
+        GPIO.output(MOTORAA,GPIO.HIGH)
+        motor_pwm1.ChangeDutyCycle(speed)
+        GPIO.output(MOTORAB,GPIO.LOW)
+        motor_pwm2.ChangeDutyCycle(0)
+        GPIO.output(MOTORBA,GPIO.LOW)
+        motor_pwm3.ChangeDutyCycle(0)
+        GPIO.output(MOTORBB,GPIO.HIGH)
+        motor_pwm4.ChangeDutyCycle(speed)
+        
+    if(userInput == 'x'):
+        print("x pressed")
+        GPIO.output(MOTORAA,GPIO.LOW)
+        motor_pwm1.ChangeDutyCycle(0)
+        GPIO.output(MOTORAB,GPIO.LOW)
+        motor_pwm2.ChangeDutyCycle(0)
+        GPIO.output(MOTORBA,GPIO.LOW)
+        motor_pwm3.ChangeDutyCycle(0)
+        GPIO.output(MOTORBB,GPIO.LOW)
+        motor_pwm4.ChangeDutyCycle(0)
 ```
 ## Sensor Testing Code
 ```python
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+        
+TRIG_PIN = 3#left: 20. Middle: 4. Right: 3.
+ECHO_PIN =  2#left: 26. Middle: 17. Right: 2.
+        
+GPIO.setup(TRIG_PIN, GPIO.OUT)
+GPIO.setup(ECHO_PIN, GPIO.IN)
+GPIO.output(TRIG_PIN, GPIO.LOW)
+        
+time.sleep(0.1)
+        
+GPIO.output(TRIG_PIN, GPIO.HIGH)
+        
+time.sleep(0.1)
+        
+GPIO.output(TRIG_PIN, GPIO.LOW)
+TIMEOUT = 0.02
 
+pulse_send = time.time()
+start_timeout = time.time()
+while GPIO.input(ECHO_PIN) ==0:
+    pulse_send=time.time()
+    print("pulse_send " + str(pulse_send))
+    if (pulse_send - start_timeout) > TIMEOUT:
+        print("Timeout waiting for echo start")
+        break
+pulse_received = time.time()
+end_timeout = time.time()
+while GPIO.input(ECHO_PIN) ==1:
+    pulse_received=time.time()
+    print("pulse received " + str(pulse_received))
+    if (pulse_received - end_timeout) > TIMEOUT:
+        print("Timeout waiting for echo end")
+        break
+if (pulse_send - start_timeout) < TIMEOUT and (pulse_received - end_timeout) < TIMEOUT:            
+    pulse_duration=pulse_received - pulse_send
+    pulse_duration=pulse_duration/2
+    print("pulse duration " + str(pulse_duration))
+        
+    distance = 34300 * pulse_duration #speed of sound (cm/s) = 34300
+    distance = round(distance,2)
+    print("distance is " + str(distance))
 ```
 ## IMU testing Code
 ```python
+import RPi.GPIO as GPIO
+import time              
+import numpy as np
+import smbus
+import math
+from mpu6050 import mpu6050
+import matplotlib.pyplot as plt
+sensor = mpu6050(0x68)
+bus = smbus.SMBus(1)
+p = np.array([])
+r = np.array([])
+t = np.array([])
+n = 0
+while n < 10:
+    accel = sensor.get_accel_data()
+    #Pitch = atan2(a_y, sqrt(a_z^2 + a_x^2)
+    pitch = math.atan2(accel['z'], math.sqrt(accel['x']**2 + accel['y']**2))
+    roll = math.atan2(accel['y'], math.sqrt(accel['x']**2 + accel['z']**2))
+    p = np.append(p, pitch)
+    r = np.append(r, roll)
+    #Roll = atan2(a_x, sqrt(a_z^2 + a_y^2)
+    temp = sensor.get_temp()
+    t = np.append(t, temp)
+    print("Pitch " + str(pitch) + " Roll " + str(roll) + " Temperature " + str(temp))
+    print(" ")
+    time.sleep(0.1)
+    n = n + 1
+print(p)
+print(r)
+print(t)
+
+fig, ax = plt.subplots(3)
+ax[0].plot(r, color='blue', marker='o', linestyle='--'); ax[0].set_title("Roll")
+ax[0].set_ylim(-1, 1)
+ax[1].plot(p, color='green', marker='o', linestyle='--'); ax[1].set_title("Pitch")
+ax[1].set_ylim(-2, 2)
+ax[2].plot(t, color='red', marker='o', linestyle='--'); ax[2].set_title("Temperature")
+ax[2].set_ylim(0, 40)
+
+# Display the window
+plt.show()
+    
 
 ```
 ## Full code for Rover
 ```python
+import cv2
+from picamera2 import Picamera2
+import RPi.GPIO as GPIO
+import time              
+import numpy as np
+from gpiozero import DistanceSensor
+from gpiozero.pins.pigpio import PiGPIOFactory
+import smbus
+import math
+from mpu6050 import mpu6050
+import matplotlib.pyplot as plt
 
+GPIO.setmode(GPIO.BCM)
+factory = PiGPIOFactory()
+
+#define GPIO pins
+BA = 15 # pin 10
+BB = 23 # pin 16
+AA = 25 # pin 22
+AB = 9 # pin 21
+TRIGL = 20 # pin 38
+TRIGM = 4 # pin 7
+TRIGR = 22 # pin 15
+ECHOL = 26 # pin 37
+ECHOM = 17 # pin 11
+ECHOR = 27 # pin 13
+
+#Define sensors
+leftSensor = DistanceSensor(echo=ECHOL, trigger=TRIGL, pin_factory=factory)
+midSensor = DistanceSensor(echo=ECHOM, trigger=TRIGM, pin_factory=factory)
+rightSensor = DistanceSensor(echo=ECHOR, trigger=TRIGR, pin_factory=factory)
+
+#Relevant 
+CAM_X = 160
+CAM_Y = 120
+i = True
+detected = False
+alternator = True
+controller = True
+speed = 90
+area = 0
+
+#Setup motor mins
+GPIO.setup(AA, GPIO.OUT)
+GPIO.setup(AB, GPIO.OUT)     
+GPIO.setup(BA, GPIO.OUT)
+GPIO.setup(BB, GPIO.OUT)
+
+#left sensor
+GPIO.setup(TRIGL, GPIO.OUT)
+GPIO.setup(ECHOL, GPIO.IN)
+GPIO.output(TRIGL, GPIO.LOW)        
+time.sleep(0.1)        
+GPIO.output(TRIGL, GPIO.HIGH)        
+time.sleep(0.1)
+GPIO.output(TRIGL, GPIO.LOW)
+
+#middle sensor
+GPIO.setup(TRIGM, GPIO.OUT)
+GPIO.setup(ECHOM, GPIO.IN)
+GPIO.output(TRIGM, GPIO.LOW)        
+time.sleep(0.1)        
+GPIO.output(TRIGM, GPIO.HIGH)        
+time.sleep(0.1)
+GPIO.output(TRIGM, GPIO.LOW)
+
+#Right sensor
+GPIO.setup(TRIGR, GPIO.OUT)
+GPIO.setup(ECHOR, GPIO.IN)
+GPIO.output(TRIGR, GPIO.LOW)        
+time.sleep(0.1)        
+GPIO.output(TRIGR, GPIO.HIGH)        
+time.sleep(0.1)
+GPIO.output(TRIGR, GPIO.LOW)
+
+#Setup pwm for motors (speed control)
+motor_pwm1 = GPIO.PWM(AA, 1000)
+motor_pwm1.start(0)  # Initial duty cycle is 0 (stopped)
+motor_pwm2 = GPIO.PWM(AB, 1000)
+motor_pwm2.start(0)  # Initial duty cycle is 0 (stopped)
+motor_pwm3 = GPIO.PWM(BA, 1000)
+motor_pwm3.start(0)  # Initial duty cycle is 0 (stopped)
+motor_pwm4 = GPIO.PWM(BB, 1000)
+motor_pwm4.start(0)  # Initial duty cycle is 0 (stopped)
+    
+def turnLeft(rate):
+    GPIO.output(AA,GPIO.LOW)
+    motor_pwm1.ChangeDutyCycle(0)
+    GPIO.output(AB,GPIO.HIGH)
+    motor_pwm2.ChangeDutyCycle(speed * rate)
+    GPIO.output(BA,GPIO.LOW)
+    motor_pwm3.ChangeDutyCycle(0)
+    GPIO.output(BB,GPIO.HIGH)
+    motor_pwm4.ChangeDutyCycle(speed * rate)
+    print("left")
+    
+def turnRight(rate):
+    GPIO.output(AA,GPIO.HIGH)
+    motor_pwm1.ChangeDutyCycle(speed * rate)
+    GPIO.output(AB,GPIO.LOW)
+    motor_pwm2.ChangeDutyCycle(0)
+    GPIO.output(BA,GPIO.HIGH)
+    motor_pwm3.ChangeDutyCycle(speed * rate)
+    GPIO.output(BB,GPIO.LOW)
+    motor_pwm4.ChangeDutyCycle(0)
+    print("right")
+def moveForward(rate):
+    GPIO.output(AA,GPIO.HIGH)
+    motor_pwm1.ChangeDutyCycle(speed * rate)
+    GPIO.output(AB,GPIO.LOW)
+    motor_pwm2.ChangeDutyCycle(0)
+    GPIO.output(BA,GPIO.LOW)
+    motor_pwm3.ChangeDutyCycle(0)
+    GPIO.output(BB,GPIO.HIGH)
+    motor_pwm4.ChangeDutyCycle(speed * rate)
+    print("forward")
+def moveBackward(rate):
+    GPIO.output(AA,GPIO.LOW)
+    motor_pwm1.ChangeDutyCycle(0)
+    GPIO.output(AB,GPIO.HIGH)
+    motor_pwm2.ChangeDutyCycle(speed * rate)
+    GPIO.output(BA,GPIO.HIGH)
+    motor_pwm3.ChangeDutyCycle(speed * rate)
+    GPIO.output(BB,GPIO.LOW)
+    motor_pwm4.ChangeDutyCycle(0)
+    print("backward")
+def stop():
+    GPIO.output(AA,GPIO.LOW)
+    motor_pwm1.ChangeDutyCycle(0)
+    GPIO.output(AB,GPIO.LOW)
+    motor_pwm2.ChangeDutyCycle(0)
+    GPIO.output(BA,GPIO.LOW)
+    motor_pwm3.ChangeDutyCycle(0)
+    GPIO.output(BB,GPIO.LOW)
+    motor_pwm4.ChangeDutyCycle(0)
+    print("stop")
+    
+#Compute distance from nearest obstacle using sensor data, constants, and formulas
+def distance(ECHO_PIN):
+    TIMEOUT = 0.02
+    pulse_send = time.time()
+    start_timeout = time.time()
+    while GPIO.input(ECHO_PIN) ==0:
+        pulse_send=time.time()
+        if (pulse_send - start_timeout) > TIMEOUT:
+            break
+    pulse_received = time.time()
+    end_timeout = time.time()
+    while GPIO.input(ECHO_PIN) ==1:
+        pulse_received=time.time()
+        if (pulse_received - end_timeout) > TIMEOUT:
+            break
+    if (pulse_send - start_timeout) < TIMEOUT and (pulse_received - end_timeout) < TIMEOUT:            
+        pulse_duration=pulse_received - pulse_send
+        pulse_duration=pulse_duration/2
+        distance = 34300 * pulse_duration #speed of sound (cm/s) = 34300
+        distance = round(distance,2)
+        return distance
+    else:
+        return -1
+    
+#IMU setup
+try:
+    sensor = mpu6050(0x68)
+    bus = smbus.SMBus(1)
+except:
+    print("Error")
+p = np.array([]) #pitch data
+r = np.array([]) #roll data
+t = np.array([]) # temp data
+time_axis = np.array([])
+
+#Color Ranges
+COLOR_LOWER = np.array([0, 180, 135]) 
+COLOR_UPPER = np.array([7, 255, 255])
+CL1 = np.array([168, 180, 135])
+CL2 = np.array([180, 255, 255])
+
+# Initialize webcam (0 is usually the default built-in camera)
+# Initialize Picamera2picam = Picamera2()
+picam = Picamera2()
+picam.configure(picam.create_preview_configuration(main={"size": (320, 240)}))
+picam.start()
+time.sleep(2)
+moveForward(0.6)
+time.sleep(0.1)
+stop()
+start = time.monotonic_ns() // 1_000_000
+last = start
+while True:
+    detected = False
+    #capture a frame
+    frame = picam.capture_array() 
+    resize = cv2.resize(frame, (320, 240))
+    blur = cv2.GaussianBlur(resize, (5, 5), 0)
+    
+    #Convert RGB image to HSV for the mask
+    image = cv2.cvtColor(blur, cv2.COLOR_RGB2HSV)
+    
+    # Create a binary mask where the ball's color shows up as white
+    mask = cv2.inRange(image, COLOR_LOWER, COLOR_UPPER) + cv2.inRange(image, CL1, CL2)
+    kernel = np.ones((5, 5), np.uint8)
+    erode = cv2.erode(mask, kernel, iterations=1)
+    dilate = cv2.dilate(erode, kernel, iterations=1)
+    
+    # Find outlines and show mask
+    edged = cv2.Canny(dilate, 30, 200)
+    contours, hierarchy = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    cv2.imshow("Mask", mask)
+    
+    #Convert RGB image to BGR for picam display
+    frame = cv2.cvtColor(resize, cv2.COLOR_RGB2BGR)
+    
+    xpos = None
+    ypos = None
+    if len(contours) >= 1:
+        # Find the largest contour, assuming it is our ball
+        ball = max(contours, key=cv2.contourArea)
+        
+        #Try to draw an ellipse around ball if it is big enough
+        axes = (0, 0)
+        if ball is not None and len(ball) >= 5 and cv2.contourArea(ball) > 10: 
+            ellipse = cv2.fitEllipse(ball)
+            xpos = int(ellipse[0][0])
+            ypos = int(ellipse[0][1])
+            center = (xpos, ypos)
+            axes = (int(ellipse[1][0] / 2), int(ellipse[1][1] / 2))
+            a = int(axes[0] / 2)
+            b = int(axes[1] / 2)
+            
+            area = np.pi * a * b
+        # Check if ellipse is closeg enough to look like a circle
+        aspect_ratio = float(axes[0]) / axes[1] if axes[1] != 0 else 0
+        if 0.6 < aspect_ratio < 1.4:
+            
+            # Draw the reconstructed full circle/ellipse from the arc
+            cv2.ellipse(frame, ellipse, (0, 255, 0), 2)
+            cv2.circle(frame, center, 3, (0, 0, 255), -1)
+
+    #Display camera
+    cv2.imshow("Ball Tracking Rover", frame)
+            
+
+    if i == True:
+        #Get sensor distances
+        distanceL = leftSensor.distance * 100
+        distanceM = midSensor.distance * 100
+        distanceR = rightSensor.distance * 100
+        
+        #Max distance to back up
+        THRESH_LOWER = 8
+        # max distance to have to turn away
+        THRESH_UPPER = 17
+    
+        # back up if too close
+        if int(distanceL) <= THRESH_LOWER or int(distanceM) <= THRESH_LOWER or int(distanceR) <= THRESH_LOWER:
+            moveBackward(0.8)
+            print("******* OBSTACLE VERY CLOSE *************")
+            detected = True
+            
+        # turn away if obstacle is close unless ball area is very big, whcih means the ball is found
+        elif area >= 2000 or int(distanceL) <= THRESH_UPPER or int(distanceM) <= THRESH_UPPER or int(distanceR) <= THRESH_UPPER:
+            if area >= 2000:
+                print('BALL FOUND!')
+                stop()
+                break
+            if controller == True:
+                turnRight(1)
+                controller = False
+            else:
+                stop()
+                controller = True
+            print("********* OBSTACLE DETECTED ***********")
+            detected = True
+        else:
+            detected = False
+    
+    if i == False or detected == False:
+        
+        # rotate turning left if ball not found
+        if xpos == None or ypos == None:
+            if alternator == True:
+                turnLeft(1)
+                alternator = False
+            else:
+                stop()
+                alternator = True
+            print("Searching...")
+        else:
+            #distance from camera center to ball
+            dx = CAM_X - xpos
+            dy = CAM_Y - ypos
+            
+            #if ball is on the left then turn left
+            if dx > 100:
+                turnLeft(0.6)
+                
+            #if ball is on the right then turn right
+            elif dx < -100:
+                turnRight(0.6)
+            
+            #move forward if ball is in the middle zone
+            elif dy >= -100 and dy <=100:
+                moveForward(1)
+            
+            #fail safe if none of the conditions above run
+            else:
+                stop()
+                print("BALL IS NEAR")
+                
+    #Wait for 200 milliseconds to get data from IMU            
+    while True:
+        #print("hi")
+        now = time.monotonic_ns() // 1_000_000
+        dt = now - last
+        #print("startSearch is " + str(startSearch) + ", currentSearch is " + str(currentSearch) + ", search is " + str(search))
+        if dt >= 200:
+            time_data = (now - start) / 1000
+            #Add time coordinate values
+            time_axis = np.append(time_axis, time_data)
+            last = now
+            break
+        
+    try:
+        #Get accel data and use formulas to get pitch and roll
+        accel = sensor.get_accel_data()
+        
+        #Pitch = atan2(a_y, sqrt(a_z^2 + a_x^2)
+        pitch = math.atan2(accel['z'], math.sqrt(accel['x']**2 + accel['y']**2))
+        
+        #Roll = atan2(a_x, sqrt(a_z^2 + a_y^2)
+        roll = math.atan2(accel['y'], math.sqrt(accel['x']**2 + accel['z']**2))
+        
+        #Add data to arrays
+        p = np.append(p, pitch)
+        r = np.append(r, roll)
+        
+        #Get temperature data and add to data array
+        temp = sensor.get_temp()
+        t = np.append(t, temp)
+    except:
+        print("reading failed")
+        
+    #Stop camera if q is pressed
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        stop()
+        print("q pressed")
+        break
+    
+picam.stop()
+picam.close()
+
+#Graph the 3 quantities (pitch, roll, temp) as subplots
+fig, ax = plt.subplots(3)
+ax[0].plot(time_axis, r, color='blue', marker='.', linestyle='--'); ax[0].set_title("Roll")
+ax[0].set_ylim(-1.5, 1.5)
+ax[1].plot(time_axis, p, color='green', marker='.', linestyle='--'); ax[1].set_title("Pitch")
+ax[1].set_ylim(-2, 2)
+ax[2].plot(time_axis, t, color='red', marker='.', linestyle='--'); ax[2].set_title("Temperature")
+ax[2].set_ylim(0, 40)
+plt.tight_layout()
+cv2.destroyAllWindows()
+plt.show()
 ```
 
 # Bill of Materials
