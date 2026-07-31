@@ -8,6 +8,8 @@ The project involves building a Raspberry PI-based rover that tracks a ball as a
 | Palash A | Cupertino HS | Aerospace Engineering | Incoming Junior
 
 ![Headshot](headshot.jpg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l9qJblhlqhU?si=XhGIaajjwp8Tc50q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   
 # Final Milestone
 
