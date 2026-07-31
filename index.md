@@ -73,10 +73,10 @@ For your first milestone, describe what your project is and how you plan to buil
 ## Challenges
   A lot of times when I was soldering I accidentally added too much solder, which was especially tedious to avoid for smaller solder points that were closer together. If two solder points are connected by solder, it will cause a short circuit. Fortunately, I learned a couple of techniques to fix these errors. A lot of times, applying the soldering iron on the solder will remelt it and make it flow into the hole. I also ended up using the solder sucker a lot to remove excess solder from the board.
 
-<!---# Code
+# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
+c++
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -88,7 +88,7 @@ void loop() {
 
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
-} -->
+}
 
 # Bill of Materials
 
@@ -96,9 +96,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 |:--:|:--:|:--:|:--:|
 | Raspberry Pi 4 | Contains the microcomputer where code is uploaded to, and controls what actions other parts perform | $38.50 | <a href="https://www.adafruit.com/product/4295?gad_source=1&gad_campaignid=21079227318&gbraid=0AAAAADx9JvSGLBIm3AzeKDsMgLScOARTP&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi-BMiWTt63thvUL53uiCCwRKV9zTqj1L6AnmZTy36jFEQFqJ9GdmBRoCNYUQAvD_BwE"> Link </a> |
 | Raspberry Pi Camera Module | Camera that enables the robot to see and track the ball | $17.50 | <a href="https://vilros.com/products/products-raspberry-pi-camera-module-v2?variant=41308152627294&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&tw_source=google&tw_adid=&tw_campaign=19684058556&gad_source=1&gad_campaignid=19684058613&gbraid=0AAAAAD1QJAgA2hfDQwtcLNVkXxnWLVsF3&gclid=CjwKCAjwpK3SBhASEiwAtV1SPIN0OsGS5exVahvvqlmi4ZyuIY9AEKJi6pscUGfG7IIYwvgnaQwhyRoChTcQAvD_BwE"> Link </a> |
-| L298N Driver Board | Provides power to the motors, in different combinations that affect the movement of the robot, which is determined by the code uploaded into the raspberry pi | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Motors and Board Kit | Contains all the parts needed to assemble the base of the robot | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Power bank | Makes the rover be able to travel portably by powering the raspberry pi (instead of connecting a wire to a port limiting its range) | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| L9110 Driver Board | Provides power to the motors, in different combinations that affect the movement of the robot, which is determined by the code uploaded into the raspberry pi | $33.66 | <a href="https://www.amazon.com/L9110S-Stepper-Driver-Temperature-Arduino/dp/B0FP5R55GB"> Link </a> |
+| Motors and Board Kit | Contains all the parts needed to assemble the base of the robot | $Price | <a href="https://www.robotshop.com/products/xiaor-geek-2wd-robot-car-chassis-kit-with-tt-motor-battery-box-acrylic-chassis-and-2-wheels-diy-project-smart-robot-chassis-robots-car-platform-arduino-raspberry-pi?gad_source=1&gad_campaignid=20145188159&gbraid=0AAAAAD_f_xywtUFradOcL9MJx_2a-CICa&gclid=CjwKCAjwj7HTBhBiEiwA8s35OgwA-PxTNSUEWVRB7kyCOXV9RV8SHChpfO1VwdJjvLmFbZ22sCJGtxoCrRMQAvD_BwE"> Link </a> |
+| Power bank | Makes the rover be able to travel portably by powering the raspberry pi (instead of connecting a wire to a port limiting its range) | $29.99 | <a href="https://www.bestbuy.com/product/anker-power-bank-10k-22-5w-built-in-usb-c-cable-black/JJ858RLKLP/sku/6643854?utm_source=feed&extStoreId=1423&ref=212&loc=19561581008&gclsrc=aw.ds&gad_source=4&gad_campaignid=19562380540&gbraid=0AAAAAD-ORIiSjEtY-C0k9kfqrJplTjRcn&gclid=CjwKCAjwj7HTBhBiEiwA8s35OjykyXxQzE5dt1055VoaGhJWS23tOMHjG--XQwz13TsbSrepLcI0LBoCxd8QAvD_BwE"> Link </a> |
 | HC-SR04 Sensors (5 pcs) | Sends and receives a signal and measures the time in between the pulses. This time can be used to calculate the distance to the nearest obstacle. | $5.25 | <a href="https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html?srsltid=AfmBOoqFrVAtpwHDCejRn62wEtzgnn7pZzJ7Wjbl_NNX58lybzk9adbq"> Link </a> |
 | HDMI to micro HDMI cable | Allows the raspberry pi to connect to a monitor with keyboard and mouse, or just a laptop after SSH has been setup | $6.99 | <a href="https://www.amazon.com/UGREEN-Adapter-Ethernet-Compatible-Raspberry/dp/B06WWQ7KLV?th=1"> Link </a> |
 | Video Capture Card | Used to display picamera using OBS, which can be projected without Wifi | $15.99 | <a href="https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7?th=1"> Link </a> |
