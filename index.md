@@ -21,6 +21,9 @@ The project involves building a Raspberry PI-based rover that tracks a ball as a
   Now that my project at Bluestamp is finished, I can say that I have learned a lot of skills in electrical and software engineering. This program was most effective at teaching me how to use a variety of electrical components like a raspberry pi, motor driver, an IMU, and some ultrasonic sensors. As for software, I learned how to be resourceful and use the internet to find articles, blogs, and other resources to help me with implementing code for my project. I also got a lot more comfortable using terminal. Overall, the skills that I have learned at Bluestamp will help me do a lot more in my extracurricular activities at school. In the future, I hope to continue to practice my software skills for these types of projects and also learn how to design printed circuit boards (or PCBs).
 
 # Third Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7O53WqhYHmw?si=ZB7aB7B37jeF74bX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Summary
   For my 3rd milestone, I wrote the full code for the rover to track the ball, move, and avoid obstacles. I wrote all my code in the Thonny python editor, which was built in to the raspberry pi computer. To track the ball, I defined 2 color ranges to create a binary mask, where pixels whose color is in the range(s) are shown as a white pixel in the mask, while the rest of the pixels are shown as black. The program draws an ellipse around the largest contour, or outline of a shape, and assumes that is the ball. From the ellipse, it extracts we can extract the x and y coordinates of the ball's center. After this, the ultrasonic sensors send out pulses to get the nearest obstacle distance, and depending on how small those distances are, the rover will either back up, turn right, or change the outputs of the motor pins to move forward, backward, left, or right, towards the ball. If the ball is not in frame, the rover will keep rotating counterclockwise until it finds the ball.
   
@@ -31,6 +34,9 @@ The project involves building a Raspberry PI-based rover that tracks a ball as a
   Now that the main project is completed, I will start working on my modifications. The first modification is topography analysis, using an IMU to analyze and graph values for pitch, roll, and temperature over time. The IMU I have uses the MPU6050 library, and I would use python's matplotlib library to make the graph. My other modification is to use onshape to model a cover for the rover, to make it look unique.
 
 # Second Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/idbZXTeBtoM?si=icZICjPYDa-tGBc9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Summary
   For my 2nd milestone, I wired the raspberry pi, motor driver h-bridge, and ultrasonic sensors to the base of the rover. Using the schematic I made on fritzing, I started by connecting the switches on the motor driver to the motors on the sides of the robot, as well as the battery wires. Each of the sensors had 4 wires: Ground, power, echo, and trig. The ground, power, and echo wires connected to the breadboard, while the trig wires connected to the raspberry pi. For each of these sensors, I also installed a voltage divider on the breadboard. This was necessary to bring the 5V voltage in the sensors down to 3.3V so that it is compatible with the raspberry pi. After this, I tested the motors, camera module, and ultrasonic sensors using testing code to test functionality. In the process of conducting these tests, I enabled SSH on my raspberry PI so that I can remotely access the PI monitor through my own laptop using RealVNC Connect Viewer.
 ## Challenges
@@ -38,24 +44,10 @@ The project involves building a Raspberry PI-based rover that tracks a ball as a
 ## Next Steps
   The hardware is now completely setup and mounted, so now I plan to start writing full code for the robot. I will be using the Thonny python editor on the raspberry pi software, which I also used for the testing code. Currently, my logic is to use the openCV library to create a mask to track where the ball is continuously in each frame, and have the robot turn or move forward accordingly.
 
-
-<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone -->
-<!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project -->
 # First Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f4T_GTdz6V4?si=UMWHPVf3lki_EbNt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Summary
   My project is a ball tracking rover that uses raspberry PI to perform topography analysis, planet tracking, and also create a graph       charting the ball's distance from the robot. After creating diagrams on paper and a schematic online, for my first milestone I have completed the base of th robot, which included attaching the motors, the battery case, and wheels. 
 ## Challenges
@@ -68,6 +60,9 @@ For your first milestone, describe what your project is and how you plan to buil
 <!--Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
 
 # Starter Project
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h5othK2I87I?si=C7HyL0KQWkRsdQdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Summary
   For my starter project I chose the retro arcade console. The console has 5 games in its system (which I didn't correctly figure out until after filming the milestone video). Much of the project encompassed soldering buttons and other game components onto a PCB. After screwing on the battery case on the back, I screwed on the front and back lids of the console. Overall, this starter project helped me solidify my soldering skills.
 ## Challenges
